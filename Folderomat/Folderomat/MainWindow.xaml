@@ -1,0 +1,29 @@
+﻿<Window x:Class="Folderomat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Folderomat"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Canvas>
+        <StackPanel Margin="10,10,407,289" Height="20" Width="100">
+            <Button x:Name="fileSelect"
+                    Content="Select Directory"
+                    Click="fileSelect_Click"
+                    Height="20" Width="Auto"
+                    />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="50" >
+            <TextBox Name="folderName" Height="Auto" Width="78" />
+            <TextBox Name="amount" Height="Auto" Width="109"/>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="70" Background="Aquamarine">
+            <Label>Folder Name</Label>
+            <Label>Number of Folders</Label>
+        </StackPanel>
+        <Button Name="Start" Click="Start_Click" Canvas.Left="45" Canvas.Top="125" Content="Start"/>
+        <TextBlock Name="log" Width="150" Height="80" Canvas.Left="280" Canvas.Top="50" Text="Debug Window"/>
+    </Canvas>
+</Window>
