@@ -5,25 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Folderomat"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Folder Maker" Height="500" Width="800">
 
-    <Canvas>
-        <StackPanel Margin="10,10,407,289" Height="20" Width="100">
-            <Button x:Name="fileSelect"
-                    Content="Select Directory"
-                    Click="fileSelect_Click"
-                    Height="20" Width="Auto"
-                    />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="50" >
-            <TextBox Name="folderName" Height="Auto" Width="78" />
-            <TextBox Name="amount" Height="Auto" Width="109"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Canvas.Left="10" Canvas.Top="70" Background="Aquamarine">
-            <Label>Folder Name</Label>
-            <Label>Number of Folders</Label>
-        </StackPanel>
-        <Button Name="Start" Click="Start_Click" Canvas.Left="45" Canvas.Top="125" Content="Start"/>
-        <TextBlock Name="log" Width="150" Height="80" Canvas.Left="280" Canvas.Top="50" Text="Debug Window"/>
-    </Canvas>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Image Grid.Column="0" Grid.Row="0" Source="girl.jpg"/>
+
+        <Grid Grid.Column="1" Grid.Row="0" Background="#B2808080">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Choose where to create folders"  FontSize="16" />
+                <Button Name="FolderDialog" Height="20" Background="#99C15518" Click="FolderDialog_Click"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock Text="Provide the name of the folders" FontSize="16"/>
+                <TextBox Name="FolderName" Background="#99C15518" Height="20"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="7,40,10,40" Width="219" >
+                <TextBlock FontSize="16" ><Run Text="Number of "/><Run Text="f"/><Run Text="olders to create"/></TextBlock>
+                <TextBox Name="Amount" Background="#99C15518" Height="20"/>
+            </StackPanel>
+            <Button Name="ValidateButton" Click="Validate_Click" Grid.Row="3" Content="Validate Data" FontSize="24" FontWeight="Bold" Background="#99C15518"/>
+        </Grid>
+
+        <Grid Grid.Column="2" Background="#B2808080">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="ResultTextBlock" Grid.Row="0" FontSize="16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <TextBlock.Text>
+                    Waiting for input...
+                </TextBlock.Text>
+            </TextBlock>
+            <Button Name="Start" IsEnabled="False" Content="Create Folders!" Grid.Row="1" FontSize="28" FontWeight="Bold" Background="#99C15518" Click="Start_Click"/>
+        </Grid>
+
+    </Grid>
 </Window>
