@@ -19,6 +19,10 @@
 
         <Image Grid.Column="0" Grid.Row="0" Source="girl.jpg"/>
 
+        <MediaElement x:Name="Play_White" Source="Play White.mp3" LoadedBehavior="Manual" >
+        </MediaElement>
+        <MediaElement x:Name="The_Rules" Source="The Rules.mp3" LoadedBehavior="Manual" ></MediaElement>
+        
         <Grid Grid.Column="1" Grid.Row="0" Background="#B2808080">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -54,5 +58,10 @@
             <Button Name="Start" IsEnabled="False" Content="Create Folders!" Grid.Row="1" FontSize="28" FontWeight="Bold" Background="#99C15518" Click="Start_Click"/>
         </Grid>
 
+        <MediaElement Name="Muzuka"></MediaElement>
+
+      
+
     </Grid>
 </Window>
+
