@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Forms;
@@ -18,6 +18,7 @@ namespace Folderomat
         public MainWindow()
         {
             InitializeComponent();
+            Play_White.Play();
         }
 
         private void FolderDialog_Click(object sender, RoutedEventArgs e)
@@ -32,10 +33,12 @@ namespace Folderomat
         private void Validate_Click(object sender, RoutedEventArgs e)
         {
             if (Validate())
-            {                
+            {
                 ValidateButton.Background = acceptBrush;
                 Start.IsEnabled = true;
                 ResultTextBlock.Text = "Input is Valid!";
+                Play_White.Stop();
+                The_Rules.Play();
             }
         }
 
@@ -92,3 +95,4 @@ namespace Folderomat
         }
     }
 }
+
